@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1><%= @book.title %></h1>
+</div>
+
+<dl class="dl-horizontal">
+
+<!--   <dt>Title</dt>
+  <dd><%= @book.title %></dd>
+ -->
+
+  <dt>Author</dt>
+  <dd><%= @book.author %></dd>
+
+
+  <dt>Year</dt>
+  <dd><%= @book.year %></dd>
+
+
+  <dt>Category</dt>
+  <dd><%= @book.category %></dd>
+
+
+  <dt>Picture</dt>
+  <dd><img src="<%= @book.picture %>" alt="Mountain View" style="200:px;height:300px"></dd>
+
+
+  <dt>Reviews</dt>
+  <dd>
+    <ul>
+    <% @book.reviews.each do |review| %>
+      <li><a href="/reviews/<%= review.id %>"><%= review.user.username %>'s Review</a></li>
+    <% end %>
+    </ul>
+  </dd>
+
+
+</dl>
